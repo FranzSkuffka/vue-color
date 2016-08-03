@@ -58,12 +58,6 @@ import saturation from './common/Saturation.vue'
 import hue from './common/Hue.vue'
 import alpha from './common/Alpha.vue'
 
-const presetColors = [
-  '#D0021B', '#F5A623', '#F8E71C', '#8B572A', '#7ED321',
-  '#417505', '#BD10E0', '#9013FE', '#4A90E2', '#50E3C2',
-  '#B8E986', '#000000', '#4A4A4A', '#9B9B9B', '#FFFFFF'
-]
-
 export default {
   name: 'Sketch',
   mixins: [colorMixin],
@@ -73,10 +67,8 @@ export default {
     alpha,
     'ed-in': editableInput
   },
-  data () {
-    return {
-      presetColors: presetColors
-    }
+  props: {
+    presetColors: Array
   },
   computed: {
     activeColor () {
